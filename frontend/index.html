@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Control Panel v1.0</title>
+
+    <link id="theme-stylesheet" rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="desktop-grid">
+        
+        <!-- VENTANA IZQUIERDA: PANEL DE CONTROL DE ENDPOINTS -->
+        <div class="window">
+            <div class="title-bar">
+                <span>FastAPI - Endpoint Manager v1.0</span>
+                <div class="title-bar-controls">
+                    <div class="win-btn">_</div>
+                    <div class="win-btn">□</div>
+                    <div class="win-btn">X</div>
+                </div>
+            </div>
+            <div class="window-body" id="endpoints-container">
+                <div style="padding: 8px;">Cargando especificación OpenAPI...</div>
+            </div>
+        </div>
+
+        <!-- VENTANA DERECHA: CONSOLA DE SALIDA Y VISUALIZADOR -->
+        <div>
+            <div class="window">
+                <div class="title-bar">
+                    <span>Data View - Grid Results</span>
+                    <div class="title-bar-controls">
+                        <div class="win-btn">_</div>
+                        <div class="win-btn">□</div>
+                        <div class="win-btn">X</div>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <span id="endpoint-info" style="font-family: monospace; font-size: 11px;">System Ready</span>
+                        <span id="status-badge" class="badge">Awaiting Query...</span>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead id="table-head"></thead>
+                            <tbody id="table-body">
+                                <tr>
+                                    <td style="text-align: center; padding: 12px;">
+                                        Seleccione un endpoint a la izquierda para consultar datos.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="window">
+                <div class="title-bar">
+                    <span>Terminal Output - Raw JSON Response</span>
+                    <div class="title-bar-controls">
+                        <div class="win-btn">_</div>
+                        <div class="win-btn">□</div>
+                        <div class="win-btn">X</div>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <pre id="json-viewer">// Raw Payload JSON Buffer</pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="api.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>
